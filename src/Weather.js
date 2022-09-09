@@ -12,11 +12,11 @@ export default class Weather extends Component {
             weather : 'No weather request yet.'
         }
         this.getLondonWeatherDetails = this.getLondonWeatherDetails.bind(this);
-        this.getParisWeatherDetails = this.getParisWeatherDetails.bind(this);
+        this.getParisWeatherDetails  = this.getParisWeatherDetails.bind(this);
     }
 
     getLondonWeatherDetails(){
-        axios.get('/getLondonWeatherDetails').then((res)=>{
+        axios.get('https://weather-api-backend-basic.herokuapp.com/getLondonWeatherDetails').then((res)=>{
             console.log(res.data.temp);            
             this.setState({
                 weather: res.data.temp
@@ -25,7 +25,7 @@ export default class Weather extends Component {
     }
 
     getParisWeatherDetails(){
-        axios.get('/getParisWeatherDetails').then((res)=>{
+        axios.get('https://weather-api-backend-basic.herokuapp.com/getParisWeatherDetails').then((res)=>{
             console.log(res.data.temp);            
             this.setState({
                 weather: res.data.temp
